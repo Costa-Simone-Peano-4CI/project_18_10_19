@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project_18_10_19;
+package biblioteca;
 
-import bibblioteca.Book;
-import bibblioteca.Library;
+import biblioteca.Book;
+import biblioteca.Library;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +24,7 @@ public class Main {
         Library libB = new Library("Library B");
         Library libC = new Library("Library C");
         
-        Book a1 = new Book("TPSI", "Francesco", "hoepli", "arh33", 12.9);
+        Book a1 = new Book("TPSI", "Franco", "hoepli", "arh33", 12.9);
         Book a2 = new Book("sistemi", "Giovanni", "hoepli", "cdisuhi", 14.0);
         Book a3 = new Book("informatica", "Michele", "hoepli", "dsnjdsk", 11.3);
         Book a4 = new Book("italiano", "De CArlo", "hoepli", "sddj", 15.23);
@@ -52,7 +53,7 @@ public class Main {
         libB.addBook(b5);
         libB.addBook(b6);
         
-        Book c1 = new Book("TPSI", "Francesco", "hoepli", "arh33", 21.0);
+        Book c1 = new Book("TPSI", "Giorgio", "hoepli", "arh33", 21.0);
         Book c2 = new Book("PGI", "Giovanni", "hoepli", "nio34n", 54.3);
         Book c3 = new Book("ICT", "Michele", "hoepli", "h7f67", 14.0);
         Book c4 = new Book("italiano", "De CArlo", "hoepli", "sddj", 16.54);
@@ -69,7 +70,8 @@ public class Main {
         //TO-DO: function: search for a book by title in All the Libraries
         //return Not Availabe or All the results ordered by price
         
-        String findIt = "TPSI";
+        String findIt = JOptionPane.showInputDialog(null,"Inserisci il libro da cercare");
+         
         Book foundIt = new Book();
         //Book temp = new Book();
         //temp.setTitle(" ");
@@ -86,7 +88,7 @@ public class Main {
             }     
             
          }
-         for(Book temp : libA.getBooks().values()){
+         for(Book temp : libB.getBooks().values()){
              if(temp.getTitle().toString().compareTo(findIt) == 0) {
                  foundIt.setTitle(temp.getTitle());
                  foundIt.setWriter(temp.getWriter());
@@ -96,7 +98,7 @@ public class Main {
             }        
             
          }
-          for(Book temp : libA.getBooks().values()){
+          for(Book temp : libC.getBooks().values()){
              if(temp.getTitle().toString().compareTo(findIt) == 0) {
                  foundIt.setTitle(temp.getTitle());
                  foundIt.setWriter(temp.getWriter());

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bibblioteca;
+package biblioteca;
 
+import biblioteca.Book;
 import java.util.HashMap;
 import java.util.Map;
 
